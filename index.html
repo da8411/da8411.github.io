@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .js-event {
+        background-color: cornflowerblue;
+        width: 136px;
+        height: 53px;
+        position: absolute;
+        left: 45%;
+        top: 40%;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    </style>
+    <script defer="defer" src="https://vto.blueprint-lab.com/s3-wear/js/sdk.a53eb6ef60b2b9720adb.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const apiKey = 'dd88e6307d1cd0bc8f41c951a2ea44c1';
+        const appType = 'vfit_modal';
+        
+        const weARWithASolution = new WeARBuilder().setAPIKey(apiKey).setAppType(appType).build();
+        const solutionElem = weARWithASolution.getWidgetElement();
+        const modalArea = document.querySelector('.js-vfit-modal');
+
+        document.querySelector('.js-event').addEventListener('click', () => {
+            modalArea.style.display = 'block';
+            weARWithASolution.setModelID('01_Doctor');
+            document.body.appendChild(solutionElem);
+            if (!modalArea.querySelector('iframe')) modalArea.appendChild(solutionElem); 
+        });
+    });
+    </script>
+</head>
+<body>
+    <button class="js-event">가상 시착</button>
+    <div class="vfit-modal js-vfit-modal" style="display: none; width: 100%; height: 100%; position: absolute;"></div>
+</body>
+</html>
