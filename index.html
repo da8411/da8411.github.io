@@ -29,10 +29,10 @@
         const modalArea = document.querySelector('.js-vfit-modal');
 
         document.querySelector('.js-event').addEventListener('click', () => {
-            modalArea.style.display = 'block';
             weARWithASolution.setModelID('01_Doctor');
             modalArea.appendChild(solutionElem);
             if (!modalArea.querySelector('iframe')) modalArea.appendChild(solutionElem); 
+            modalArea.style.display = 'block';
         });
     });
     </script>
