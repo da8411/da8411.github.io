@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+    <title>Vfit Modal Sample</title>
+        <style>
     .js-event {
         background-color: cornflowerblue;
         width: 136px;
@@ -18,27 +15,26 @@
         font-weight: 600;
     }
     </style>
-    <script defer="defer" src="https://vto.blueprint-lab.com/s3-wear/js/sdk.ab32a307dee202f6daed.js"></script>
+
+
+    <script defer="defer" src="https://vto.blueprint-lab.com/s3-wear/js/sdk.버전정보.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const apiKey = 'dd88e6307d1cd0bc8f41c951a2ea44c1';
-        const appType = 'vfit_modal';
-        
+        document.addEventListener('DOMContentLoaded', () => {
+        const apiKey = '전달받은_apiKey를_입력하세요.’;
+        const appType = 'vfit_modal’;
         const weARWithASolution = new WeARBuilder().setAPIKey(apiKey).setAppType(appType).build();
         const solutionElem = weARWithASolution.getWidgetElement();
-        const modalArea = document.querySelector('.js-vfit-modal');
-
+        const modalArea = document.querySelector('.js-vfit-modal’);
         document.querySelector('.js-event').addEventListener('click', () => {
-            weARWithASolution.setModelID('01_Doctor');
-            modalArea.appendChild(solutionElem);
-            if (!modalArea.querySelector('iframe')) modalArea.appendChild(solutionElem); 
-            modalArea.style.display = 'block';
+            weARWithASolution.setModelID('01_Doctor’);
+            if (!modalArea.querySelector('iframe')) modalArea.appendChild(solutionElem);
+            modalArea.style.display = 'block’;
         });
     });
     </script>
 </head>
 <body>
-    <button class="js-event">가상 시착</button>
+    <button class="js-event">Open Vfit Modal</button>
     <div class="vfit-modal js-vfit-modal" style="display: none; width: 100%; height: 100%; position: absolute;"></div>
 </body>
 </html>
