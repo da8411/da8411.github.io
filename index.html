@@ -20,15 +20,15 @@
     <script defer="defer" src="https://vto.blueprint-lab.com/s3-wear/js/sdk.버전정보.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-        const apiKey = '전달받은_apiKey를_입력하세요.’;
-        const appType = 'vfit_modal’;
+        const apiKey = '전달받은_apiKey를_입력하세요.';
+        const appType = 'vfit_modal';
         const weARWithASolution = new WeARBuilder().setAPIKey(apiKey).setAppType(appType).build();
         const solutionElem = weARWithASolution.getWidgetElement();
-        const modalArea = document.querySelector('.js-vfit-modal’);
+        const modalArea = document.querySelector('.js-vfit-modal');
         document.querySelector('.js-event').addEventListener('click', () => {
-            weARWithASolution.setModelID('01_Doctor’);
+            weARWithASolution.setModelID('01_Doctor');
             if (!modalArea.querySelector('iframe')) modalArea.appendChild(solutionElem);
-            modalArea.style.display = 'block’;
+            modalArea.style.display = 'block';
         });
     });
     </script>
